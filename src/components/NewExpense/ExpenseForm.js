@@ -4,6 +4,7 @@ import './ExpenseForm.css';
 
 const ExpenseForm = (props) => {
   const [enteredTitle, setEnteredTitle] = useState('');
+  const [enteredLocation, setEnteredLocation] = useState('');
   const [enteredAmount, setEnteredAmount] = useState('');
   const [enteredDate, setEnteredDate] = useState('');
   // const [userInput, setUserInput] = useState({
@@ -21,6 +22,10 @@ const ExpenseForm = (props) => {
     // setUserInput((prevState) => {
     //   return { ...prevState, enteredTitle: event.target.value };
     // });
+  };
+  const locationChangeHandler = (event) => {
+    setEnteredLocation(event.target.value);
+  
   };
 
   const amountChangeHandler = (event) => {
@@ -44,6 +49,7 @@ const ExpenseForm = (props) => {
 
     const expenseData = {
       title: enteredTitle,
+      location: enteredLocation,
       amount: enteredAmount,
       date: new Date(enteredDate),
     };
@@ -63,6 +69,14 @@ const ExpenseForm = (props) => {
             type='text'
             value={enteredTitle}
             onChange={titleChangeHandler}
+          />
+        </div>
+        <div className='new-expense__control'>
+          <label>Location</label>
+          <input
+            type='text'
+            value={enteredLocation}
+            onChange={locationChangeHandler}
           />
         </div>
         <div className='new-expense__control'>
