@@ -51,4 +51,13 @@
       font-size: 1.25rem;
       padding: 0.5rem 1.5rem;
     }
+    .expense-item__delete {
+      font-size: 1rem;
+      color: white;
+      padding: 0.5rem 1.5rem;
+      border: 1px solid white;
+      background-color: rgb(184, 7, 7);
+      border-radius: 12px
+      
+    }
   }
